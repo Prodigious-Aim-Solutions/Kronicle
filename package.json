@@ -4,7 +4,7 @@
   "description": "Kronicle is a HTML5 SPA used for blogging and content management",
   "main": "kronicle.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/Prodigious-Aim-Solutions/Kronicle/issues"
   },
-  "homepage": "https://github.com/Prodigious-Aim-Solutions/Kronicle"
+  "homepage": "https://github.com/Prodigious-Aim-Solutions/Kronicle",
+  "devDependencies": {
+    "should": "~3.3.1"
+  }
 }
