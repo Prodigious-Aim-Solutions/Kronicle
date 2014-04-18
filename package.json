@@ -2,7 +2,7 @@
   "name": "Kronicle",
   "version": "0.0.0",
   "description": "Kronicle is a HTML5 SPA used for blogging and content management",
-  "main": "kronicle.js",
+  "main": "./build/Kronicle.js",
   "scripts": {
     "test": "mocha"
   },
@@ -29,6 +29,8 @@
   },
   "homepage": "https://github.com/Prodigious-Aim-Solutions/Kronicle",
   "devDependencies": {
-    "should": "~3.3.1"
+    "should": "~3.3.1",
+    "docco": "~0.6.3",
+    "coffee-script": "~1.7.1"
   }
 }
