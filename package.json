@@ -1,0 +1,31 @@
+{
+  "name": "Kronicle",
+  "version": "0.0.0",
+  "description": "Kronicle is a HTML5 SPA used for blogging and content management",
+  "main": "kronicle.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Prodigious-Aim-Solutions/Kronicle.git"
+  },
+  "keywords": [
+    "Kronicle",
+    "HTML5",
+    "CMS",
+    "SPA",
+    "Single",
+    "Page",
+    "Application",
+    "Blog",
+    "Content",
+    "Management"
+  ],
+  "author": "Jason Corbett (Corbzilla)",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/Prodigious-Aim-Solutions/Kronicle/issues"
+  },
+  "homepage": "https://github.com/Prodigious-Aim-Solutions/Kronicle"
+}
