@@ -1,0 +1,32 @@
+{
+  "name": "Kronicle",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Prodigious-Aim-Solutions/Kronicle",
+  "authors": [
+    "Corbzilla <jason.ron.corbett@gmail.com>"
+  ],
+  "description": "Kronicle is a HTML5 SPA for blogging and content management",
+  "main": "./build/Kronicle.js",
+  "moduleType": [
+    "amd",
+    "node"
+  ],
+  "keywords": [
+    "html5",
+    "SPA",
+    "CMS",
+    "blog"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pubsub-js": "~1.4.2",
+    "lodash": "~2.4.1"
+  }
+}
