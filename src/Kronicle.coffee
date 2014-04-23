@@ -1,23 +1,22 @@
 # #Welcome to Kronicle
 # Kronicle is a HTML5 SPA used for blogging and content management
 
-(exports) ->
+((exports) ->
     
     # Main Kronicle class
     class Kronicle
         # constructor: takes no arguments
-        constructor: () ->
+        constructor: (args) ->
             # if a kron.json file is found, use it's configuration data in pkg
-            if pkg?
-                # check for the dataSource
-                dsType = pkg.dataSource
-                if dsType?
-                    require ["../app/DataSource/#{ dsType }"], (dsType) ->
-                        dataSource = dsType
+            if args?
+                # check for the dataSources
+                dsTypes = args.dataSources
+                if dsTypes?
+                        dataSources = dsTypes
                         # create new core instance, pass it routes and data source from configuration package
                         c = new Core(
-                            routes: pkg.routes
-                            dataSource: dataSource
+                            routes: args.routes
+                            dataSources: dataSources
                         )
                         return
             return
@@ -36,10 +35,10 @@
         # Views handle all UI elements.
         @View = View
         
-    return
 
     exports.Kronicle = Kronicle
-(if typeof exports is "undefined" then @["Kronicle"] = {} else exports)
+    #console.log "exports.Kronicle: #{ exports.Kronicle }"
+) (if typeof exports is "undefined" then @ else exports)
     #return Kronicle
 if typeof define is "function" and define.amd
   define "Kronicle", [], ->
