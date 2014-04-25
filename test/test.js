@@ -20,4 +20,17 @@
     });
   });
 
+  describe('Kronicle Core', function() {
+    var testCore;
+    testCore = new Kronicle.Core({
+      dataSources: [[]]
+    });
+    it('should contain an array of views', function() {
+      testCore.should.have.property('views');
+    });
+    it('should contain an array of routes', function() {
+      testCore.should.have.property('routes');
+    });
+  });
+
 }).call(this);

@@ -124,8 +124,8 @@
   Core = (function() {
     function Core(args) {
       var existingView, r, route, view, _ref;
-      this.routes = [];
-      this.views = [];
+      this.routes = {};
+      this.views = {};
       if (!args || (args.dataSources == null)) {
         throw new Error("Error: Kronicle requires a datasource.");
       } else {
@@ -133,16 +133,16 @@
           _ref = args.routes;
           for (route in _ref) {
             view = _ref[route];
-            if (_.contains(views, views.id)) {
-              existingView = _.find(views, view.id);
-              routes[route] = existingView;
+            if (this.views.length && _.contains(this.views, view.id)) {
+              existingView = _.find(this.views, view.id);
+              this.routes[route] = existingView;
             } else {
-              routes[route] = view;
-              views[view.id] = view;
+              this.routes[route] = view;
+              this.views[view.id] = view;
             }
           }
           r = new Routes({
-            routes: routes
+            routes: this.routes
           });
         }
         if (args.dataSources) {

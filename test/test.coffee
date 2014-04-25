@@ -15,3 +15,14 @@ describe 'Kronicle', ->
         Kronicle.should.have.property('Routes')
         return
     return
+
+describe 'Kronicle Core', ->
+    testCore = new Kronicle.Core(dataSources: [[]])
+    ## add dataSources test
+    it 'should contain an array of views', ->
+        testCore.should.have.property('views')
+        return
+    it 'should contain an array of routes', ->
+        testCore.should.have.property('routes')
+        return
+    return
