@@ -37,6 +37,7 @@
     "grunt-contrib-coffee": "~0.10.1",
     "grunt-coffeelint": "0.0.10",
     "grunt-contrib-clean": "~0.5.0",
-    "grunt-mocha-test": "~0.10.2"
+    "grunt-mocha-test": "~0.10.2",
+    "grunt-jsonlint": "~1.0.4"
   }
 }

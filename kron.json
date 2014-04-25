@@ -1,7 +1,7 @@
 {
     "name": "Kronicle",
     "blogName": "Kronicle",
-    "description": "Empty Kronicle Blog"
+    "description": "Empty Kronicle Blog",
     "version": "0.0.0",
     "routes":{},
     "dataSource": ""    
