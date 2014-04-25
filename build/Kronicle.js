@@ -23,11 +23,9 @@
       });
       this.router = new Router(funRoutes);
       this.router.configure({
-        before: (function(_this) {
-          return function() {
-            return $(".row > div").hide();
-          };
-        })(this)
+        before: function() {
+          return $("section").hide();
+        }
       });
       this.router.init();
       for (route in routes) {
@@ -38,11 +36,9 @@
     };
 
     Routes.prototype._addEvents = function(route, view) {
-      this.router.on(route, (function(_this) {
-        return function() {
-          PubSub.publish('kronRoute', route);
-        };
-      })(this));
+      this.router.on(route, function() {
+        PubSub.publish('kronRoute', route);
+      });
       return this;
     };
 
@@ -56,7 +52,7 @@
       this.show = __bind(this.show, this);
       var domEl;
       if (el == null) {
-        throw "Error: Must pass view a DOM element.";
+        throw new Error("Error: Must pass view a DOM element.");
       } else if (typeof el === 'string') {
         domEl = document.getElementById(el);
         if (!domEl) {
@@ -127,11 +123,11 @@
 
   Core = (function() {
     function Core(args) {
-      var existingView, r, route, routes, view, views, _ref;
-      routes = [];
-      views = [];
+      var existingView, r, route, view, _ref;
+      this.routes = [];
+      this.views = [];
       if (!args || (args.dataSources == null)) {
-        throw "Error: Kronicle requires a datasource.";
+        throw new Error("Error: Kronicle requires a datasource.");
       } else {
         if (args.routes) {
           _ref = args.routes;
@@ -164,14 +160,13 @@
     var Kronicle;
     Kronicle = (function() {
       function Kronicle(args) {
-        var c, dataSources, dsTypes;
+        var c, dsTypes;
         if (args != null) {
           dsTypes = args.dataSources;
           if (dsTypes != null) {
-            dataSources = dsTypes;
             c = new Core({
               routes: args.routes,
-              dataSources: dataSources
+              dataSources: args.dataSources
             });
             return;
           }

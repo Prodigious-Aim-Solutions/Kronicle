@@ -3,7 +3,7 @@
 class View
     constructor: (el) ->
         if !el?
-            throw "Error: Must pass view a DOM element."
+            throw new Error("Error: Must pass view a DOM element.")
         else if typeof el == 'string'
             domEl = document.getElementById(el)
             if !domEl then domEl = document.getElementsByClassName(el)[0]

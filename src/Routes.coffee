@@ -9,17 +9,17 @@ class Routes
     _registerRoutes: (routes) =>
         funRoutes = {}
         _.forIn(routes, (obj, route) ->
-                obj.initialize()
-                funRoutes[route] = obj.show
-               )
-        @router = new Router(funRoutes)    
-        @router.configure(before: () => $(".row > div").hide())
+            obj.initialize()
+            funRoutes[route] = obj.show
+           )
+        @router = new Router(funRoutes)
+        @router.configure(before: () -> $("section").hide())
         @router.init()
         @_addEvents(route, view) for route, view of routes
         return @
     _addEvents:(route, view) =>
-        @router.on(route, () => 
-                   PubSub.publish('kronRoute', route)
-                   return
-                   )
+        @router.on(route, () ->
+            PubSub.publish('kronRoute', route)
+            return
+            )
         return @

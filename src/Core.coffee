@@ -1,10 +1,9 @@
-#define ['Routes', 'View', 'lodash'], (Routes, View, _) ->
 class Core
     constructor: (args) ->
-        routes = []
-        views = []
+        @routes = []
+        @views = []
         if !args or !args.dataSources?
-            throw "Error: Kronicle requires a datasource."
+            throw new Error("Error: Kronicle requires a datasource.")
         else
             if args.routes
                 for route, view of args.routes

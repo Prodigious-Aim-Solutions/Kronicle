@@ -1,5 +1,5 @@
 {
-  "name": "Kronicle",
+  "name": "kronicle",
   "version": "0.0.0",
   "homepage": "https://github.com/Prodigious-Aim-Solutions/Kronicle",
   "authors": [
@@ -7,6 +7,10 @@
   ],
   "description": "Kronicle is a HTML5 SPA for blogging and content management",
   "main": "./build/Kronicle.js",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/Prodigious-Aim-Solutions/Kronicle.git"
+  },
   "moduleType": [
     "amd",
     "node"
@@ -27,9 +31,7 @@
   ],
   "dependencies": {
     "pubsub-js": "~1.4.2",
-    "lodash": "~2.4.1"
-  },
-  "devDependencies": {
+    "lodash": "~2.4.1",
     "director": "~1.2.2"
   }
 }

@@ -12,20 +12,21 @@
                 # check for the dataSources
                 dsTypes = args.dataSources
                 if dsTypes?
-                        dataSources = dsTypes
-                        # create new core instance, pass it routes and data source from configuration package
-                        c = new Core(
-                            routes: args.routes
-                            dataSources: dataSources
-                        )
-                        return
+                    # create new core instance, pass it routes and data source
+                    # from configuration package
+                    c = new Core(
+                        routes: args.routes
+                        dataSources: args.dataSources
+                    )
+                    return
             return
         # ##Expose Kronicle functinality publically
         # ###Core
         # Contains core Kronicle functionality
         @Core = Core
         # ###DataSource
-        # This is the default data source for Kronicle, this should be overriden with a custom implementation for your platform
+        # This is the default data source for Kronicle, this should be
+        # supplided a custom implementation for your platform as an arguments
         @DataSource = DataSource
         # ###Routesx`
         # This is used for registering and handling routing
@@ -39,9 +40,9 @@
     exports.Kronicle = Kronicle
     #console.log "exports.Kronicle: #{ exports.Kronicle }"
 ) (if typeof exports is "undefined" then @ else exports)
-    #return Kronicle
+    
 if typeof define is "function" and define.amd
-  define "Kronicle", [], ->
-    Kronicle
+    define "Kronicle", [], ->
+        Kronicle
 
     
