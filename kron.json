@@ -1,0 +1,8 @@
+{
+    "name": "Kronicle",
+    "blogName": "Kronicle",
+    "description": "Empty Kronicle Blog",
+    "version": "0.1.0",
+    "routes":{},
+    "dataSource": ""    
+}

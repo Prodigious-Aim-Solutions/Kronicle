@@ -1,0 +1,43 @@
+{
+  "name": "Kronicle",
+  "version": "0.1.0",
+  "description": "Kronicle is a HTML5 SPA used for blogging and content management",
+  "main": "./build/Kronicle.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Prodigious-Aim-Solutions/Kronicle.git"
+  },
+  "keywords": [
+    "Kronicle",
+    "HTML5",
+    "CMS",
+    "SPA",
+    "Single",
+    "Page",
+    "Application",
+    "Blog",
+    "Content",
+    "Management"
+  ],
+  "author": "Corbzilla <jason.ron.corbett@gmail.com>",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/Prodigious-Aim-Solutions/Kronicle/issues"
+  },
+  "homepage": "https://github.com/Prodigious-Aim-Solutions/Kronicle",
+  "devDependencies": {
+    "should": "~3.3.1",
+    "docco": "~0.6.3",
+    "coffee-script": "~1.7.1",
+    "grunt": "~0.4.4",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-coffee": "~0.10.1",
+    "grunt-coffeelint": "0.0.10",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-mocha-test": "~0.10.2",
+    "grunt-jsonlint": "~1.0.4"
+  }
+}
