@@ -1,6 +1,6 @@
 {
   "name": "Kronicle",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Kronicle is a HTML5 SPA used for blogging and content management",
   "main": "./build/Kronicle.js",
   "scripts": {
