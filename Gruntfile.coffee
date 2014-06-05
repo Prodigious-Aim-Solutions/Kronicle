@@ -36,6 +36,6 @@ module.exports = (grunt) ->
       grunt.loadNpmTasks('grunt-contrib-clean')
       grunt.loadNpmTasks('grunt-mocha-test')
     
-      grunt.registerTask('default', ['coffeelint', 'jsonlint', 'clean:build', 'concat', 'coffee', 'clean:tmp', 'coffee:test', 'mochaTest']);
+      grunt.registerTask('default', ['coffeelint', 'jsonlint', 'clean:build', 'concat', 'coffee', 'clean:tmp', 'coffee:test', 'mochaTest'])
     
       return

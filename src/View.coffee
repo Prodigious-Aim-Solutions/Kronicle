@@ -20,3 +20,6 @@ class View
         return
     initialize: () ->
         return @
+    dataSources: (ds) =>
+        @dataSources = ds
+        return

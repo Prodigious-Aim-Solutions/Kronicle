@@ -37,7 +37,7 @@
 
     Routes.prototype._addEvents = function(route, view) {
       this.router.on(route, function() {
-        PubSub.publish('kronRoute', route);
+        PubSub.publish('kronRoute:#{route}', route);
       });
       return this;
     };
@@ -48,6 +48,7 @@
 
   View = (function() {
     function View(el) {
+      this.dataSources = __bind(this.dataSources, this);
       this.hide = __bind(this.hide, this);
       this.show = __bind(this.show, this);
       var domEl;
@@ -76,6 +77,10 @@
 
     View.prototype.initialize = function() {
       return this;
+    };
+
+    View.prototype.dataSources = function(ds) {
+      this.dataSources = ds;
     };
 
     return View;
@@ -129,6 +134,9 @@
       if (!args || (args.dataSources == null)) {
         throw new Error("Error: Kronicle requires a datasource.");
       } else {
+        if (args.dataSources) {
+          this.dataSources = args.dataSources;
+        }
         if (args.routes) {
           _ref = args.routes;
           for (route in _ref) {
@@ -137,6 +145,8 @@
               existingView = _.find(this.views, view.id);
               this.routes[route] = existingView;
             } else {
+              view.dataSources(this.dataSources);
+              view.initialize();
               this.routes[route] = view;
               this.views[view.id] = view;
             }
@@ -144,9 +154,6 @@
           r = new Routes({
             routes: this.routes
           });
-        }
-        if (args.dataSources) {
-          this.dataSources = args.dataSources;
         }
       }
       return this;

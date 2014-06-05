@@ -1,3 +1,4 @@
+blanket = require('blanket')
 should = require('should')
 Kronicle = require('../build/Kronicle').Kronicle
 

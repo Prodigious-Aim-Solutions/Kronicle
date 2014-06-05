@@ -19,7 +19,7 @@ class Routes
         return @
     _addEvents:(route, view) =>
         @router.on(route, () ->
-            PubSub.publish('kronRoute', route)
+            PubSub.publish('kronRoute:#{route}', route)
             return
             )
         return @
