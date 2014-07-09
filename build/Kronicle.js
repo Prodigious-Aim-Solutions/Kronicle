@@ -51,6 +51,9 @@
       this.hide = __bind(this.hide, this);
       this.show = __bind(this.show, this);
       var domEl;
+      ({
+        dataSources: {}
+      });
       if (el == null) {
         throw new Error("Error: Must pass view a DOM element.");
       } else if (typeof el === 'string') {
@@ -129,6 +132,9 @@
       if (!args || (args.dataSources == null)) {
         throw new Error("Error: Kronicle requires a datasource.");
       } else {
+        if (args.dataSources) {
+          this.dataSources = args.dataSources;
+        }
         if (args.routes) {
           _ref = args.routes;
           for (route in _ref) {
@@ -139,14 +145,12 @@
             } else {
               this.routes[route] = view;
               this.views[view.id] = view;
+              view.dataSources = this.dataSources;
             }
           }
           r = new Routes({
             routes: this.routes
           });
-        }
-        if (args.dataSources) {
-          this.dataSources = args.dataSources;
         }
       }
       return this;
