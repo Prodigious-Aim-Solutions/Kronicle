@@ -42,7 +42,7 @@
 ) (if typeof exports is "undefined" then @ else exports)
     
 if typeof define is "function" and define.amd
-    define "Kronicle", [], ->
+    define () ->
         Kronicle
 
     
