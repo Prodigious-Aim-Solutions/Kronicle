@@ -189,7 +189,7 @@
   })((typeof exports === "undefined" ? this : exports));
 
   if (typeof define === "function" && define.amd) {
-    define("Kronicle", [], function() {
+    define(function() {
       return Kronicle;
     });
   }
