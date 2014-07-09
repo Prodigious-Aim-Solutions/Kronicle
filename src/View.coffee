@@ -2,6 +2,7 @@
 
 class View
     constructor: (el) ->
+        dataSources: {}
         if !el?
             throw new Error("Error: Must pass view a DOM element.")
         else if typeof el == 'string'
