@@ -1,8 +1,5 @@
-#define () ->
-
-class View
+class Component
     dataSources: {}
-    components: []
     constructor: (el) ->
         if !el?
             throw new Error("Error: Must pass view a DOM element.")
@@ -14,15 +11,3 @@ class View
         else
             @$el = $(el)
             @id = el.id or el.className
-    show: () =>
-        @$el.show()
-        return
-    hide: () =>
-        @$el.hide()
-        return
-    initialize: () ->
-        return @
-    addComponent: (component) =>
-        @components.push(component)
-        component.dataSources = @dataSources
-        return @

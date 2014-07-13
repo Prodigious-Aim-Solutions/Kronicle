@@ -28,13 +28,16 @@
         # This is the default data source for Kronicle, this should be
         # supplided a custom implementation for your platform as an arguments
         @DataSource = DataSource
-        # ###Routesx`
+        # ###Routes
         # This is used for registering and handling routing
         @Routes = Routes
         # ###Views
         # This is used to create new Views.
-        # Views handle all UI elements.
+        # Views handle all page issues
         @View = View
+        # ###Components
+        # This is used to create new Components
+        # Components are parts of Views
         
 
     exports.Kronicle = Kronicle

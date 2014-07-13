@@ -11,7 +11,7 @@ module.exports = (grunt) ->
             src: ['./kron.json', './bower.json', './package.json']
         concat:
             dist:
-                src: ['./src/Routes.coffee', './src/View.coffee', './src/DataSource.coffee', './src/Core.coffee', './src/Kronicle.coffee'],
+                src: ['./src/Routes.coffee', './src/View.coffee', './src/Component.coffee', './src/DataSource.coffee', './src/Core.coffee', './src/Kronicle.coffee'],
                 dest: './.tmp/Kronicle.coffee'
         coffee:
             compile:

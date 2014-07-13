@@ -1,5 +1,5 @@
 (function() {
-  var Core, DataSource, Routes, View,
+  var Component, Core, DataSource, Routes, View,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   Routes = (function() {
@@ -47,15 +47,15 @@
   })();
 
   View = (function() {
+    View.prototype.dataSources = {};
+
+    View.prototype.components = [];
+
     function View(el) {
       this.addComponent = __bind(this.addComponent, this);
       this.hide = __bind(this.hide, this);
       this.show = __bind(this.show, this);
       var domEl;
-      ({
-        dataSources: {},
-        components: []
-      });
       if (el == null) {
         throw new Error("Error: Must pass view a DOM element.");
       } else if (typeof el === 'string') {
@@ -90,6 +90,30 @@
     };
 
     return View;
+
+  })();
+
+  Component = (function() {
+    Component.prototype.dataSources = {};
+
+    function Component(el) {
+      var domEl;
+      if (el == null) {
+        throw new Error("Error: Must pass view a DOM element.");
+      } else if (typeof el === 'string') {
+        domEl = document.getElementById(el);
+        if (!domEl) {
+          domEl = document.getElementsByClassName(el)[0];
+        }
+        this.$el = $(domEl);
+        this.id = el;
+      } else {
+        this.$el = $(el);
+        this.id = el.id || el.className;
+      }
+    }
+
+    return Component;
 
   })();
 
