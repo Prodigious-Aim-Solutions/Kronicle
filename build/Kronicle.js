@@ -48,11 +48,13 @@
 
   View = (function() {
     function View(el) {
+      this.addComponent = __bind(this.addComponent, this);
       this.hide = __bind(this.hide, this);
       this.show = __bind(this.show, this);
       var domEl;
       ({
-        dataSources: {}
+        dataSources: {},
+        components: []
       });
       if (el == null) {
         throw new Error("Error: Must pass view a DOM element.");
@@ -78,6 +80,12 @@
     };
 
     View.prototype.initialize = function() {
+      return this;
+    };
+
+    View.prototype.addComponent = function(component) {
+      this.components.push(component);
+      component.dataSources = this.dataSources;
       return this;
     };
 
