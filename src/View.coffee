@@ -3,6 +3,7 @@
 class View
     constructor: (el) ->
         dataSources: {}
+        components: []
         if !el?
             throw new Error("Error: Must pass view a DOM element.")
         else if typeof el == 'string'
@@ -20,4 +21,8 @@ class View
         @$el.hide()
         return
     initialize: () ->
+        return @
+    addComponent: (component) =>
+        @components.push(component)
+        component.dataSources = @dataSources
         return @
