@@ -218,6 +218,8 @@
 
       Kronicle.View = View;
 
+      Kronicle.Component = Component;
+
       return Kronicle;
 
     })();

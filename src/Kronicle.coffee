@@ -38,6 +38,7 @@
         # ###Components
         # This is used to create new Components
         # Components are parts of Views
+        @Component = Component
         
 
     exports.Kronicle = Kronicle
