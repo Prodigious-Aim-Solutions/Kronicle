@@ -56,18 +56,26 @@
       this.hide = __bind(this.hide, this);
       this.show = __bind(this.show, this);
       var domEl;
-      if (el == null) {
-        throw new Error("Error: Must pass view a DOM element.");
-      } else if (typeof el === 'string') {
-        domEl = document.getElementById(el);
-        if (!domEl) {
-          domEl = document.getElementsByClassName(el)[0];
+      if (typeof window !== "undefined" && window !== null) {
+        if (el == null) {
+          throw new Error("Error: Must pass view a DOM element.");
+        } else if (typeof el === 'string') {
+          domEl = document.getElementById(el);
+          if (!domEl) {
+            domEl = document.getElementsByClassName(el)[0];
+          }
+          this.$el = $(domEl);
+          this.id = el;
+        } else {
+          this.$el = $(el);
+          this.id = el.id || el.className;
         }
-        this.$el = $(domEl);
-        this.id = el;
       } else {
-        this.$el = $(el);
-        this.id = el.id || el.className;
+        this.$el = {
+          show: function() {},
+          hide: function() {}
+        };
+        this.id = "";
       }
     }
 
@@ -84,7 +92,11 @@
     };
 
     View.prototype.addComponent = function(component) {
-      this.components.push(component);
+      if (this.components[component.id] === void 0) {
+        this.components[component.id] = component;
+      } else {
+        throw new Error("Error: A component with id already exits in view");
+      }
       component.dataSources = this.dataSources;
       return this;
     };
@@ -98,18 +110,26 @@
 
     function Component(el) {
       var domEl;
-      if (el == null) {
-        throw new Error("Error: Must pass view a DOM element.");
-      } else if (typeof el === 'string') {
-        domEl = document.getElementById(el);
-        if (!domEl) {
-          domEl = document.getElementsByClassName(el)[0];
+      if (typeof window !== "undefined" && window !== null) {
+        if (el == null) {
+          throw new Error("Error: Must pass view a DOM element.");
+        } else if (typeof el === 'string') {
+          domEl = document.getElementById(el);
+          if (!domEl) {
+            domEl = document.getElementsByClassName(el)[0];
+          }
+          this.$el = $(domEl);
+          this.id = el;
+        } else {
+          this.$el = $(el);
+          this.id = el.id || el.className;
         }
-        this.$el = $(domEl);
-        this.id = el;
       } else {
-        this.$el = $(el);
-        this.id = el.id || el.className;
+        this.$el = {
+          show: function() {},
+          hide: function() {}
+        };
+        this.id = el;
       }
     }
 
